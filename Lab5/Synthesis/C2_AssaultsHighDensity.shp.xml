@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20190409</CreaDate><CreaTime>13323600</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="d:\program files (x86)\arcgis\desktop10.4\ArcToolbox\Toolboxes\Conversion Tools.tbx\RasterToPolygon" Date="20190409" Time="133100">RasterToPolygon RecKDE I:\BookLabs\Lab3\Output\AssaultsDensity.shp SIMPLIFY Value</Process></lineage></DataProperties></Esri></metadata>

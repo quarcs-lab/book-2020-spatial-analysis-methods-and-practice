@@ -1,0 +1,44 @@
+REGRESSION
+----------
+SUMMARY OF OUTPUT: SPATIALLY WEIGHTED LEAST SQUARES (HOM)
+---------------------------------------------------------
+Data set            :CityGeoDa.dbf
+Weights matrix      : City_k8.gwt
+Dependent Variable  :      Income                Number of Observations:          90
+Mean dependent var  :  16316.7534                Number of Variables   :           2
+S.D. dependent var  :   4975.6157                Degrees of Freedom    :          88
+Pseudo R-squared    :      0.8104
+N. of iterations    :           1
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     z-Statistic     Probability
+------------------------------------------------------------------------------------
+            CONSTANT    7693.0776148    1170.7406053       6.5711205       0.0000000
+           Insurance      36.5309077       3.0911917      11.8177425       0.0000000
+              lambda       0.8333165       0.1027078       8.1134693       0.0000000
+------------------------------------------------------------------------------------
+================================ END OF REPORT =====================================
+
+
+REGRESSION
+----------
+SUMMARY OF OUTPUT: SPATIALLY WEIGHTED LEAST SQUARES (HOM)
+---------------------------------------------------------
+Data set            :CityGeoDa.dbf
+Weights matrix      : City_k8.gwt
+Dependent Variable  :      Income                Number of Observations:          90
+Mean dependent var  :  16316.7534                Number of Variables   :           2
+S.D. dependent var  :   4975.6157                Degrees of Freedom    :          88
+Pseudo R-squared    :      0.8104
+N. of iterations    :           1
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     z-Statistic     Probability
+------------------------------------------------------------------------------------
+            CONSTANT    7693.0776148    1170.7406053       6.5711205       0.0000000
+           Insurance      36.5309077       3.0911917      11.8177425       0.0000000
+              lambda       0.8333165       0.1027078       8.1134693       0.0000000
+------------------------------------------------------------------------------------
+================================ END OF REPORT =====================================
+
+

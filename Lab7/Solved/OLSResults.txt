@@ -1,0 +1,98 @@
+REGRESSION
+----------
+SUMMARY OF OUTPUT: ORDINARY LEAST SQUARES
+-----------------------------------------
+Data set            :CityGeoDa.dbf
+Weights matrix      :File: City_k8.gwt
+Dependent Variable  :      Income                Number of Observations:          90
+Mean dependent var  :  16316.7534                Number of Variables   :           2
+S.D. dependent var  :   4975.6157                Degrees of Freedom    :          88
+R-squared           :      0.8104
+Adjusted R-squared  :      0.8083
+Sum squared residual:417719419.599                F-statistic           :    376.1749
+Sigma-square        : 4746811.586                Prob(F-statistic)     :   1.571e-33
+S.E. of regression  :    2178.718                Log likelihood        :    -818.477
+Sigma-square ML     : 4641326.884                Akaike info criterion :    1640.955
+S.E of regression ML:   2154.3739                Schwarz criterion     :    1645.955
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     t-Statistic     Probability
+------------------------------------------------------------------------------------
+            CONSTANT    6815.4555302     541.0387214      12.5969829       0.0000000
+           Insurance      39.6472210       2.0441739      19.3952292       0.0000000
+------------------------------------------------------------------------------------
+
+REGRESSION DIAGNOSTICS
+MULTICOLLINEARITY CONDITION NUMBER            4.489
+
+TEST ON NORMALITY OF ERRORS
+TEST                             DF        VALUE           PROB
+Jarque-Bera                       2         216.887           0.0000
+
+DIAGNOSTICS FOR HETEROSKEDASTICITY
+RANDOM COEFFICIENTS
+TEST                             DF        VALUE           PROB
+Breusch-Pagan test                1         170.257           0.0000
+Koenker-Bassett test              1          36.189           0.0000
+
+DIAGNOSTICS FOR SPATIAL DEPENDENCE
+TEST                           MI/DF       VALUE           PROB
+Moran's I (error)              0.5676         8.927           0.0000
+Lagrange Multiplier (lag)         1          40.638           0.0000
+Robust LM (lag)                   1           2.450           0.1175
+Lagrange Multiplier (error)       1          67.845           0.0000
+Robust LM (error)                 1          29.656           0.0000
+Lagrange Multiplier (SARMA)       2          70.294           0.0000
+
+================================ END OF REPORT =====================================
+
+
+REGRESSION
+----------
+SUMMARY OF OUTPUT: ORDINARY LEAST SQUARES
+-----------------------------------------
+Data set            :CityGeoDa.dbf
+Weights matrix      :File: City_k8.gwt
+Dependent Variable  :      Income                Number of Observations:          90
+Mean dependent var  :  16316.7534                Number of Variables   :           2
+S.D. dependent var  :   4975.6157                Degrees of Freedom    :          88
+R-squared           :      0.8104
+Adjusted R-squared  :      0.8083
+Sum squared residual:417719419.599                F-statistic           :    376.1749
+Sigma-square        : 4746811.586                Prob(F-statistic)     :   1.571e-33
+S.E. of regression  :    2178.718                Log likelihood        :    -818.477
+Sigma-square ML     : 4641326.884                Akaike info criterion :    1640.955
+S.E of regression ML:   2154.3739                Schwarz criterion     :    1645.955
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     t-Statistic     Probability
+------------------------------------------------------------------------------------
+            CONSTANT    6815.4555302     541.0387214      12.5969829       0.0000000
+           Insurance      39.6472210       2.0441739      19.3952292       0.0000000
+------------------------------------------------------------------------------------
+
+REGRESSION DIAGNOSTICS
+MULTICOLLINEARITY CONDITION NUMBER            4.489
+
+TEST ON NORMALITY OF ERRORS
+TEST                             DF        VALUE           PROB
+Jarque-Bera                       2         216.887           0.0000
+
+DIAGNOSTICS FOR HETEROSKEDASTICITY
+RANDOM COEFFICIENTS
+TEST                             DF        VALUE           PROB
+Breusch-Pagan test                1         170.257           0.0000
+Koenker-Bassett test              1          36.189           0.0000
+
+DIAGNOSTICS FOR SPATIAL DEPENDENCE
+TEST                           MI/DF       VALUE           PROB
+Moran's I (error)              0.5676         8.927           0.0000
+Lagrange Multiplier (lag)         1          40.638           0.0000
+Robust LM (lag)                   1           2.450           0.1175
+Lagrange Multiplier (error)       1          67.845           0.0000
+Robust LM (error)                 1          29.656           0.0000
+Lagrange Multiplier (SARMA)       2          70.294           0.0000
+
+================================ END OF REPORT =====================================
+
+

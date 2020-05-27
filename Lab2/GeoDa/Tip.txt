@@ -1,0 +1,1 @@
+To solve the exercise again remove the filed INCZSCORE from CityGeoDa.shp stored in E:\BookLabs\Lab2\GeoDa. To do so, open the table by selecting the table icon (see Figure 1.17) and then RC INCZSCORE > Delete Variable > INCZSCORE > Delete > Close

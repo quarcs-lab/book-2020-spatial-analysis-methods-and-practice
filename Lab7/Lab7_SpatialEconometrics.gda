@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <title>CityGeoDa</title>
+    <layers>
+        <layer>
+            <datasource>
+                <type>ESRI Shapefile</type>
+                <path>CityGeoDa.shp</path>
+            </datasource>
+            <layername>CityGeoDa</layername>
+            <title/>
+            <variable_order>
+                <time_ids>
+                    <id>time 0</id>
+                </time_ids>
+                <var>Municipali</var>
+                <var>PostCode</var>
+                <var>Population</var>
+                <var>Density</var>
+                <var>Foreigners</var>
+                <var>Owners</var>
+                <var>SecondaryE</var>
+                <var>University</var>
+                <var>Phd_Master</var>
+                <var>Income</var>
+                <var>Insurance</var>
+                <var>Rent</var>
+                <var>Expenses</var>
+                <var>Area</var>
+                <var>Regimes</var>
+            </variable_order>
+            <custom_classifications/>
+            <weights_entries/>
+            <default_vars>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+            </default_vars>
+        </layer>
+    </layers>
+</project>

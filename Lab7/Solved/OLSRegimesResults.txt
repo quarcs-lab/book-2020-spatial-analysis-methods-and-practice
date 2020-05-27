@@ -1,0 +1,112 @@
+REGRESSION
+----------
+
+SUMMARY OF OUTPUT: ORDINARY LEAST SQUARES ESTIMATION - REGIME 1
+---------------------------------------------------------------
+Data set            :CityGeoDa.dbf
+Weights matrix      : City_k8.gwt
+Dependent Variable  :    1_Income                Number of Observations:          24
+Mean dependent var  :  22339.3154                Number of Variables   :           2
+S.D. dependent var  :   5248.4513                Degrees of Freedom    :          22
+R-squared           :      0.4322
+Adjusted R-squared  :      0.4064
+Sum squared residual:359717091.199                F-statistic           :     16.7482
+Sigma-square        :16350776.873                Prob(F-statistic)     :   0.0004814
+S.E. of regression  :    4043.609                Log likelihood        :    -232.328
+Sigma-square ML     :14988212.133                Akaike info criterion :     468.656
+S.E of regression ML:   3871.4612                Schwarz criterion     :     471.012
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     t-Statistic     Probability
+------------------------------------------------------------------------------------
+          1_CONSTANT    8229.6370715    3545.1511953       2.3213783       0.0299225
+         1_Insurance      36.9768649       9.0353654       4.0924593       0.0004814
+------------------------------------------------------------------------------------
+Regimes variable: Regimes
+
+REGRESSION DIAGNOSTICS
+MULTICOLLINEARITY CONDITION NUMBER            8.472
+
+TEST ON NORMALITY OF ERRORS
+TEST                             DF        VALUE           PROB
+Jarque-Bera                       2           1.318           0.5173
+
+DIAGNOSTICS FOR HETEROSKEDASTICITY
+RANDOM COEFFICIENTS
+TEST                             DF        VALUE           PROB
+Breusch-Pagan test                1          10.008           0.0016
+Koenker-Bassett test              1           7.572           0.0059
+
+DIAGNOSTICS FOR SPATIAL DEPENDENCE
+TEST                           MI/DF       VALUE           PROB
+Lagrange Multiplier (lag)         1          12.860           0.0003
+Robust LM (lag)                   1           0.098           0.7549
+Lagrange Multiplier (error)       1          17.334           0.0000
+Robust LM (error)                 1           4.572           0.0325
+Lagrange Multiplier (SARMA)       2          17.431           0.0002
+
+----------
+
+SUMMARY OF OUTPUT: ORDINARY LEAST SQUARES ESTIMATION - REGIME 2
+---------------------------------------------------------------
+Data set            :CityGeoDa.dbf
+Weights matrix      : City_k8.gwt
+Dependent Variable  :    2_Income                Number of Observations:          66
+Mean dependent var  :  14126.7309                Number of Variables   :           2
+S.D. dependent var  :   2426.5459                Degrees of Freedom    :          64
+R-squared           :      0.8815
+Adjusted R-squared  :      0.8797
+Sum squared residual:45337330.710                F-statistic           :    476.2744
+Sigma-square        :  708395.792                Prob(F-statistic)     :   2.386e-31
+S.E. of regression  :     841.663                Log likelihood        :    -537.170
+Sigma-square ML     :  686929.253                Akaike info criterion :    1078.339
+S.E of regression ML:    828.8120                Schwarz criterion     :    1082.718
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     t-Statistic     Probability
+------------------------------------------------------------------------------------
+          2_CONSTANT    7556.9160121     318.3684549      23.7363844       0.0000000
+         2_Insurance      34.9396571       1.6009951      21.8237127       0.0000000
+------------------------------------------------------------------------------------
+Regimes variable: Regimes
+
+REGRESSION DIAGNOSTICS
+MULTICOLLINEARITY CONDITION NUMBER            5.979
+
+TEST ON NORMALITY OF ERRORS
+TEST                             DF        VALUE           PROB
+Jarque-Bera                       2          18.211           0.0001
+
+DIAGNOSTICS FOR HETEROSKEDASTICITY
+RANDOM COEFFICIENTS
+TEST                             DF        VALUE           PROB
+Breusch-Pagan test                1          48.606           0.0000
+Koenker-Bassett test              1          21.473           0.0000
+
+DIAGNOSTICS FOR SPATIAL DEPENDENCE
+TEST                           MI/DF       VALUE           PROB
+Lagrange Multiplier (lag)         1           8.469           0.0036
+Robust LM (lag)                   1           0.709           0.3998
+Lagrange Multiplier (error)       1          17.135           0.0000
+Robust LM (error)                 1           9.375           0.0022
+Lagrange Multiplier (SARMA)       2          17.844           0.0001
+
+
+REGIMES DIAGNOSTICS - CHOW TEST
+                 VARIABLE        DF        VALUE           PROB
+                 CONSTANT         1           0.036           0.8501
+                Insurance         1           0.049           0.8243
+              Global test         2           2.683           0.2614
+
+DIAGNOSTICS FOR GLOBAL SPATIAL DEPENDENCE
+Residuals are treated as homoskedastic for the purpose of these tests
+TEST                           MI/DF       VALUE           PROB
+Lagrange Multiplier (lag)         1          40.567           0.0000
+Robust LM (lag)                   1           1.178           0.2777
+Lagrange Multiplier (error)       1          64.269           0.0000
+Robust LM (error)                 1          24.880           0.0000
+Lagrange Multiplier (SARMA)       2          65.447           0.0000
+
+================================ END OF REPORT =====================================
+
+

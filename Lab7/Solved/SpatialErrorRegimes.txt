@@ -1,0 +1,49 @@
+REGRESSION
+----------
+
+SUMMARY OF OUTPUT: SPATIALLY WEIGHTED LEAST SQUARES ESTIMATION (HOM) - REGIME 1
+-------------------------------------------------------------------------------
+Data set            :CityGeoDa.dbf
+Weights matrix      : City_k8.gwt
+Dependent Variable  :    1_Income                Number of Observations:          24
+Mean dependent var  :  22339.3154                Number of Variables   :           2
+S.D. dependent var  :   5248.4513                Degrees of Freedom    :          22
+Pseudo R-squared    :      0.4322
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     z-Statistic     Probability
+------------------------------------------------------------------------------------
+          1_CONSTANT    5778.3534159    3146.3243692       1.8365409       0.0662777
+         1_Insurance      42.8402155       6.9763088       6.1408141       0.0000000
+            1_lambda       0.7253011       0.1446441       5.0143826       0.0000005
+------------------------------------------------------------------------------------
+Regimes variable: Regimes
+----------
+
+SUMMARY OF OUTPUT: SPATIALLY WEIGHTED LEAST SQUARES ESTIMATION (HOM) - REGIME 2
+-------------------------------------------------------------------------------
+Data set            :CityGeoDa.dbf
+Weights matrix      : City_k8.gwt
+Dependent Variable  :    2_Income                Number of Observations:          66
+Mean dependent var  :  14126.7309                Number of Variables   :           2
+S.D. dependent var  :   2426.5459                Degrees of Freedom    :          64
+Pseudo R-squared    :      0.8815
+
+------------------------------------------------------------------------------------
+            Variable     Coefficient       Std.Error     z-Statistic     Probability
+------------------------------------------------------------------------------------
+          2_CONSTANT    7694.5642575     421.1609982      18.2698880       0.0000000
+         2_Insurance      34.2548771       2.0069269      17.0683231       0.0000000
+            2_lambda       0.5390750       0.1196396       4.5058231       0.0000066
+------------------------------------------------------------------------------------
+Regimes variable: Regimes
+
+REGIMES DIAGNOSTICS - CHOW TEST
+                 VARIABLE        DF        VALUE           PROB
+                 CONSTANT         1           0.364           0.5461
+                Insurance         1           1.399           0.2369
+                   lambda         1           0.984           0.3212
+              Global test         3           2.572           0.4624
+================================ END OF REPORT =====================================
+
+

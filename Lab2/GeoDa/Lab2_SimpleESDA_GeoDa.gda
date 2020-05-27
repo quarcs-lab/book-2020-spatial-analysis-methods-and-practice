@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <title>CityGeoDa</title>
+    <layers>
+        <layer>
+            <datasource>
+                <type>ESRI Shapefile</type>
+                <path>CityGeoDa.shp</path>
+            </datasource>
+            <layername>CityGeoDa</layername>
+            <title/>
+            <variable_order>
+                <time_ids>
+                    <id>time 0</id>
+                </time_ids>
+                <var>Municipali</var>
+                <var>PostCode</var>
+                <var>Population</var>
+                <var>SecondaryE</var>
+                <var>University</var>
+                <var>Phd_Master</var>
+                <var>Income</var>
+                <var>Insurance</var>
+                <var>Rent</var>
+                <var>Expenses</var>
+                <var>Area</var>
+                <var>Regimes</var>
+                <var>Density</var>
+                <var>Foreigners</var>
+                <var>Owners</var>
+                <var>INCZSCORE</var>
+            </variable_order>
+            <custom_classifications>
+                <classification_definition>
+                    <title>Custom Breaks (Income)</title>
+                    <type>custom</type>
+                    <num_cats>4</num_cats>
+                    <automatic_labels>true</automatic_labels>
+                    <assoc_db_fld_name>Income</assoc_db_fld_name>
+                    <uniform_dist_min>10294.89</uniform_dist_min>
+                    <uniform_dist_max>37644.13</uniform_dist_max>
+                    <breaks>
+                        <break>15000</break>
+                        <break>20000</break>
+                        <break>25000</break>
+                    </breaks>
+                    <names>
+                        <name>&lt; 15000.000</name>
+                        <name>[15000, 20000)</name>
+                        <name>[20000, 25000]</name>
+                        <name>&gt; 25000.000</name>
+                    </names>
+                    <colors/>
+                    <color_scheme>sequential</color_scheme>
+                </classification_definition>
+                <classification_definition>
+                    <title>IncZScore</title>
+                    <type>custom</type>
+                    <num_cats>5</num_cats>
+                    <automatic_labels>true</automatic_labels>
+                    <assoc_db_fld_name>INCZSCORE</assoc_db_fld_name>
+                    <uniform_dist_min>-1.21027503755657</uniform_dist_min>
+                    <uniform_dist_max>4.286379407286513</uniform_dist_max>
+                    <breaks>
+                        <break>-2.5</break>
+                        <break>-1</break>
+                        <break>1</break>
+                        <break>2.5</break>
+                    </breaks>
+                    <names>
+                        <name>&lt; -2.500</name>
+                        <name>[-2.500, -1)</name>
+                        <name>[-1, 1]</name>
+                        <name>(1, 2.500]</name>
+                        <name>&gt; 2.500</name>
+                    </names>
+                    <color_scheme>sequential</color_scheme>
+                </classification_definition>
+            </custom_classifications>
+            <weights_entries/>
+            <default_vars>
+                <default_var>
+                    <name>INCZSCORE</name>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name>Expenses</name>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+            </default_vars>
+        </layer>
+    </layers>
+</project>

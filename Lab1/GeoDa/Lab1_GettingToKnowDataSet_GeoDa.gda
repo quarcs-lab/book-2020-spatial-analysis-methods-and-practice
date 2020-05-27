@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <title>CityGeoDa</title>
+    <layers>
+        <layer>
+            <datasource>
+                <type>ESRI Shapefile</type>
+                <path>CityGeoDa.shp</path>
+            </datasource>
+            <layername>CityGeoDa</layername>
+            <title/>
+            <variable_order>
+                <time_ids>
+                    <id>time 0</id>
+                </time_ids>
+                <var>Municipali</var>
+                <var>PostCode</var>
+                <var>Population</var>
+                <var>SecondaryE</var>
+                <var>University</var>
+                <var>Phd_Master</var>
+                <var>Income</var>
+                <var>Insurance</var>
+                <var>Rent</var>
+                <var>Expenses</var>
+                <var>Area</var>
+                <var>Regimes</var>
+                <var>Density</var>
+                <var>Foreigners</var>
+                <var>Owners</var>
+            </variable_order>
+            <custom_classifications>
+                <classification_definition>
+                    <title>Custom Breaks (Population)</title>
+                    <type>custom</type>
+                    <num_cats>5</num_cats>
+                    <automatic_labels>true</automatic_labels>
+                    <assoc_db_fld_name/>
+                    <breaks>
+                        <break>4103.295555555555</break>
+                        <break>8206.591111111111</break>
+                        <break>12309.88666666667</break>
+                        <break>16413.18222222222</break>
+                    </breaks>
+                    <names>
+                        <name>&lt; 2000.000</name>
+                        <name>[2000, 5000)</name>
+                        <name>[5000, 15000]</name>
+                        <name>(15000, 20000]</name>
+                        <name>&gt; 20000.000</name>
+                    </names>
+                    <colors/>
+                    <color_scheme>sequential</color_scheme>
+                </classification_definition>
+            </custom_classifications>
+            <weights_entries/>
+            <default_vars>
+                <default_var>
+                    <name>Population</name>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name>Area</name>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+            </default_vars>
+        </layer>
+    </layers>
+</project>

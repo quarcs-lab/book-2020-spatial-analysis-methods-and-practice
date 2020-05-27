@@ -1,0 +1,106 @@
+******************************************************************************
+Choose 1 of 10 Summary
+    Highest Adjusted R-Squared Results    
+AdjR2   AICc   JB K(BP)  VIF   SA   Model       
+ 0.81 918.02 0.02  0.00 1.00 0.00  +INCOME***   
+ 0.60 985.34 0.00  0.00 1.00 0.00  +INSURANCE***
+ 0.57 992.01 0.01  0.00 1.00 0.00  +RENT***     
+       Passing Models       
+AdjR2 AICc JB K(BP) VIF SA   Model
+******************************************************************************
+Choose 2 of 10 Summary
+           Highest Adjusted R-Squared Results          
+AdjR2   AICc   JB K(BP)  VIF   SA   Model                    
+ 0.85 900.89 0.00  0.01 1.91 0.00  +INCOME***  +RENT***      
+ 0.84 905.78 0.00  0.00 1.66 0.00  +UNIVERSITY**  +INCOME*** 
+ 0.83 912.56 0.00  0.00 1.47 0.00  +POPULATION***  +INCOME***
+       Passing Models       
+AdjR2 AICc JB K(BP) VIF SA   Model
+******************************************************************************
+Choose 3 of 10 Summary
+                Highest Adjusted R-Squared Results               
+AdjR2   AICc   JB K(BP)  VIF   SA   Model                              
+ 0.87 884.45 0.00  0.00 2.59 0.26  +UNIVERSITY***  +INCOME***  +RENT***
+ 0.86 895.71 0.00  0.01 2.49 0.60  +POPULATION***  +INCOME***  +RENT***
+ 0.86 896.43 0.00  0.01 1.92 0.11  +OWNERS**  +INCOME***  +RENT***     
+       Passing Models       
+AdjR2 AICc JB K(BP) VIF SA   Model
+******************************************************************************
+Choose 4 of 10 Summary
+                      Highest Adjusted R-Squared Results                      
+AdjR2   AICc   JB K(BP)  VIF   SA   Model                                           
+ 0.88 882.52 0.00  0.01 2.64 0.56  +OWNERS**  +UNIVERSITY***  +INCOME***  +RENT***  
+ 0.88 883.87 0.00  0.01 3.70 0.86  +POPULATION*  +UNIVERSITY**  +INCOME***  +RENT***
+ 0.88 884.32 0.00  0.00 3.81 0.18  +UNIVERSITY**  -PHD_MASTER  +INCOME***  +RENT*** 
+       Passing Models       
+AdjR2 AICc JB K(BP) VIF SA   Model
+******************************************************************************
+************** Exploratory Regression Global Summary (EXPENSES) **************
+
+              Percentage of Search Criteria Passed             
+                   Search Criterion Cutoff Trials # Passed % Passed
+             Min Adjusted R-Squared > 0.75    385      180    46.75
+            Max Coefficient p-value < 0.05    385       60    15.58
+                      Max VIF Value < 7.50    385      367    95.32
+            Min Jarque-Bera p-value > 0.10    385       16     4.16
+Min Spatial Autocorrelation p-value > 0.10     15        6    40.00
+
+------------------------------------------------------------------------------
+
+      Summary of Variable Significance     
+Variable   % Significant % Negative % Positive
+INCOME            100.00       0.00     100.00
+RENT              100.00       0.00     100.00
+UNIVERSITY         84.62       0.00     100.00
+POPULATION         74.62      49.23      50.77
+INSURANCE          71.54      26.92      73.08
+DENSITY            60.77      50.77      49.23
+PHD_MASTER         52.31       6.15      93.85
+SECONDARYE         18.46      72.31      27.69
+FOREIGNERS         14.62      32.31      67.69
+OWNERS             12.31      12.31      87.69
+
+------------------------------------------------------------------------------
+
+       Summary of Multicollinearity       
+Variable     VIF Violations Covariates       
+POPULATION  2.49     0      --------         
+DENSITY     1.89     0      --------         
+FOREIGNERS  2.08     0      --------         
+OWNERS      1.92     0      --------         
+SECONDARYE  1.72     0      --------         
+UNIVERSITY  3.55     0      --------         
+PHD_MASTER  4.49     0      --------         
+INCOME     10.97     16     INSURANCE (10.53)
+INSURANCE   8.60     6      INCOME (10.53)   
+RENT        2.09     0      --------         
+
+------------------------------------------------------------------------------
+
+                                 Summary of Residual Normality (JB)                                
+      JB    AdjR2       AICc    K(BP)      VIF       SA   Model                                          
+0.996766 0.833190 911.084266 0.000000 2.139714 0.000005  +POPULATION***  +FOREIGNERS  +OWNERS  +INCOME***
+0.964232 0.821283 917.289778 0.000000 1.730483 0.000000  +FOREIGNERS  +OWNERS*  +SECONDARYE  +INCOME***  
+0.879930 0.822030 915.667491 0.000000 1.562164 0.000000  +FOREIGNERS  +OWNERS*  +INCOME***               
+
+------------------------------------------------------------------------------
+
+                          Summary of Residual Spatial Autocorrelation (SA)                          
+      SA    AdjR2       AICc       JB    K(BP)      VIF   Model                                           
+0.855801 0.876721 883.867623 0.000000 0.011252 3.695209  +POPULATION*  +UNIVERSITY**  +INCOME***  +RENT***
+0.604094 0.857425 895.710602 0.000000 0.012039 2.488589  +POPULATION***  +INCOME***  +RENT***             
+0.558420 0.878560 882.515318 0.000000 0.008369 2.643798  +OWNERS**  +UNIVERSITY***  +INCOME***  +RENT***  
+
+------------------------------------------------------------------------------
+
+Table Abbreviations
+AdjR2 Adjusted R-Squared                                     
+AICc  Akaike's Information Criterion                         
+JB    Jarque-Bera p-value                                    
+K(BP) Koenker (BP) Statistic p-value                         
+VIF   Max Variance Inflation Factor                          
+SA    Global Moran's I p-value                               
+Model Variable sign (+/-)                                    
+Model Variable significance (* = 0.10, ** = 0.05, *** = 0.01)
+
+------------------------------------------------------------------------------

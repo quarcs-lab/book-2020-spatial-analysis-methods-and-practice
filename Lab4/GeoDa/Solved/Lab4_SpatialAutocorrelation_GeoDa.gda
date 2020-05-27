@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <title>CityGeoDa</title>
+    <layers>
+        <layer>
+            <datasource>
+                <type>ESRI Shapefile</type>
+                <path>CityGeoDa.shp</path>
+            </datasource>
+            <layername>CityGeoDa</layername>
+            <title/>
+            <variable_order>
+                <time_ids>
+                    <id>time 0</id>
+                </time_ids>
+                <var>Municipali</var>
+                <var>PostCode</var>
+                <var>Population</var>
+                <var>Density</var>
+                <var>Foreigners</var>
+                <var>Owners</var>
+                <var>SecondaryE</var>
+                <var>University</var>
+                <var>Phd_Master</var>
+                <var>Income</var>
+                <var>Insurance</var>
+                <var>Rent</var>
+                <var>Expenses</var>
+                <var>Area</var>
+                <var>Regimes</var>
+            </variable_order>
+            <custom_classifications/>
+            <weights_entries>
+                <weights>
+                    <title>CityGeoDa</title>
+                    <default/>
+                    <meta_info>
+                        <weights_type>threshold</weights_type>
+                        <dist_metric>euclidean</dist_metric>
+                        <dist_units>Meter</dist_units>
+                        <dist_values>centroids</dist_values>
+                        <threshold_val>1050.684848229503</threshold_val>
+                        <inverse_distance>1</inverse_distance>
+                        <path>CityGeoDa.gwt</path>
+                        <id_variable>PostCode</id_variable>
+                        <symmetry>symmetric</symmetry>
+                        <num_observations>90</num_observations>
+                        <min_neighbors>1</min_neighbors>
+                        <max_neighbors>28</max_neighbors>
+                        <mean_neighbors>11.55555555555556</mean_neighbors>
+                        <median_neighbors>9.5</median_neighbors>
+                        <non_zero_perc>12.83950617283951</non_zero_perc>
+                    </meta_info>
+                </weights>
+            </weights_entries>
+            <default_vars>
+                <default_var>
+                    <name>Income</name>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+            </default_vars>
+        </layer>
+    </layers>
+</project>
