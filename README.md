@@ -1,7 +1,19 @@
-# spatial-analysis-methods-and-practice
-spatial-analysis-methods-and-practice
+# Spatial analysis theory and practice : Describe - explore - explain
 
 - Lab data for book: [Spatial analysis theory and practice : describe - explore - explain](www.cambridge.org/9781108498982)
+
+## Contents
+
+1. Think spatially: Basic concepts of spatial analysis and space conceptualization
+2. Exploratory spatial data analysis tools and statistics
+3. Analyzing geographic distributions and point patterns
+4. Spatial autocorrelation
+5. Multivariate data in geography: data reduction and clustering
+6. Modeling relationships: regression and geographically weighted regression
+7. Spatial econometrics.
+
+
+## Description of the folders
 
 - BackUpData folder stores the original data and serves as the backup of the data stored in the folder Data. In case of corrupted, accidentally deleted or wrongly edited data, you should copy the dataset from the BackUpData folder and paste it into the Data folder.
 - Each subsequent folder (e.g., Lab1) stores the .mxd files for each specific lab and the Output and Solved folders.
