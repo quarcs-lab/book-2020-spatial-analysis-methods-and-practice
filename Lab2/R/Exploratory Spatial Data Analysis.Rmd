@@ -1,0 +1,192 @@
+---
+title: "Exploratory Spatial Data Analysis
+Tools and Statistics"
+author: "Felipe Santos-Marquez & Sew Sook Yan"
+date: "10/12/2020"
+output:
+  html_notebook:
+    code_folding: show
+    highlight: monochrome
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_depth: 4
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
+  html_document:
+    code_download: true
+    df_print: paged
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 4
+    number_sections: true
+    code_folding: "show"
+    theme: "cosmo"
+    highlight: "monochrome"
+  pdf_document: default
+  word_document: default
+bibliography: biblio.bib
+---
+
+<style>
+h1.title {font-size: 18pt; color: DarkBlue;} 
+body, h1, h2, h3, h4 {font-family: "Palatino", serif;}
+body {font-size: 12pt;}
+/* Headers */
+h1,h2,h3,h4,h5,h6{font-size: 14pt; color: #00008B;}
+body {color: #333333;}
+a, a:hover {color: #8B3A62;}
+pre {font-size: 12px;}
+</style>
+
+# Loading required packages
+
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+library(tidyverse)
+library(sf)
+library(tmap)
+library(PerformanceAnalytics) #scatter plot matrix
+library(PerformanceAnalytics) #scatter plot matrix
+ 
+# Change the presentation of decimal numbers to 4 and avoid scientific notation
+options(prompt="R> ", digits=5, scipen=999)
+```
+
+
+# Import the shapefile
+
+
+```{r}
+sh<- st_read("../../Data/city.shp")
+object.size(sh)
+s.sp <- as(sh, "Spatial")
+class(s.sp)
+class(sh)
+```
+
+## Inspect the table within the shapefile
+
+```{r}
+st_drop_geometry(sh)
+```
+
+## A quick map
+
+```{r}
+qtm(sh)
+```
+# Creating the breaks for the custom breaks map 
+
+```{r}
+breaks<- c(-Inf, 15000,20000,25000, Inf)
+```
+
+## creating the custom breaks map
+
+```{r}
+tm_shape(sh) +
+  tm_fill("Income", title= "Income",breaks=breaks,palette="Greens")+
+  tm_borders()
+```
+
+
+# Creating a histogram
+
+```{r}
+sh %>% 
+  ggplot(aes(x=Income))+
+  geom_histogram(bins=10, color="black", fill="white")
+```
+
+
+# creating a box plot
+
+geom_jitter(size = 3, alpha = 0.3, width = 0.1) is used so that the points are not all crammed in the
+same line
+
+```{r}
+set.seed(2019)
+sh %>% 
+  ggplot(aes(x=Income, y=Municipali))+
+  geom_boxplot()+
+  geom_jitter(size = 3, alpha = 0.3, width = 0.1)
+```
+
+# Creating a new variable standardized income
+
+```{r}
+sh$IncZScore<- as.vector(scale(sh$Income, center = TRUE, scale = TRUE))
+```
+
+## creating the new breaks
+
+```{r}
+breaks_Z<- c(-Inf, -2.5,-1, 1, 2.5, Inf)
+```
+
+## creating the custom breaks map
+
+```{r}
+#creating a vector with the colors for the bins in the map
+col<- c('#ffffb2','#fecc5c','#fd8d3c','#f03b20','#bd0026')
+
+tm_shape(sh) +
+  tm_fill("IncZScore", title= "Standardized Income", breaks=breaks_Z, palette = col)+
+  tm_borders()
+```
+
+# Bivariate Analysis: Analyzing Expenditures by Educational Attainment 
+
+A scatter plot and the OLS regression estimates  
+
+```{r}
+sh %>% 
+  ggplot(aes(x=University, y=Expenses))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+lm.sh<-   lm(Expenses ~ University, data=sh)
+summary( lm.sh)
+```
+
+# Creating a scatter plot matrix
+
+```{r}
+data<- data.frame( sh$Expenses, sh$University, sh$SecondaryE)
+data
+chart.Correlation(data, histogram = TRUE, method = "pearson")
+```
+
+## A better option 
+
+```{r}
+#pairs.panels(data,
+ #            smooth = TRUE,      # If TRUE, draws loess smooths
+ #            scale = FALSE,      # If TRUE, scales the correlation text font
+ #            density = TRUE,     # If TRUE, adds density plots and histograms
+  #           ellipses = TRUE,    # If TRUE, draws ellipses
+  #           method = "pearson", # Correlation method (also "spearman" or "kendall")
+  #           pch = 21,           # pch symbol
+  #           lm = TRUE,         # If TRUE, plots linear fit rather than the LOESS (smoothed) fit
+  #           cor = TRUE,         # If TRUE, reports correlations
+  #           jiggle = FALSE,     # If TRUE, data points are jittered
+  #           factor = 2,         # Jittering factor
+  #           hist.col = 4,       # Histograms color
+  #           stars = TRUE,       # If TRUE, adds significance level with stars
+  #           ci = TRUE)          # If TRUE, adds confidence intervals
+
+
+```
+
+That's all!
+
+![](https://media.giphy.com/media/xUOxf7XfmpxuSode1O/giphy.gif)
+
+
+
+
+
