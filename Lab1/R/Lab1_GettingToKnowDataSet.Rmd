@@ -1,0 +1,48 @@
+---
+title: "Lab1_GettingToKnowDataSet"
+author: "Carlos Mendez, Siew Sook Yan, Felipe Santos Marquez"
+date: "10/22/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+#Load Required Packages
+library(tidyverse) 
+library(lubridate)
+library(sf)
+library(tmap)
+library(dplyr)
+```
+
+
+```{r}
+#Reading the Shapefile
+City <- st_read("../../Data/City.shp")
+```
+```{r}
+#Creating Customised Break (Population)
+breaks <- c(-Inf, 2000, 5000, 10000, 15000, 20000, Inf)
+
+#Plot Custom Breaks Map
+tm_shape(City) +
+  tm_fill("Population", title = "Population", breaks=breaks) +
+  tm_borders()
+
+```
+
+```{r}
+#Calculate Population Density (Raw Rate Smoothed Settings)
+City <- City %>%  mutate(PopDen = Population/Area)
+
+#Plot Natural Breaks Map 
+tm_shape(City) +
+  tm_fill("PopDen", title = "Population Density", n=4, style="jenks") +
+  tm_borders()
+
+```
+
