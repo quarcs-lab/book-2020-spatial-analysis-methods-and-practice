@@ -1,0 +1,34 @@
+---
+title: "Lab4_SpatialAutocorrelation"
+author: "Carlos Mendez, Siew Sook Yan, Felipe Santos Marquez"
+date: "11/2/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")
+Sys.which("make")
+## "C:\\rtools40\\usr\\bin\\make.exe"
+install.packages("jsonlite", type = "source")
+```
+
+
+```{r}
+#Load Required Packages
+library(tidyverse) 
+library(lubridate)
+library(sf)
+library(tmap)
+library(dplyr)
+library(rgeoda)
+```
+
+```{r}
+#Reading the Shapefile
+City <- st_read("../../Data/City.shp")
+```
+
