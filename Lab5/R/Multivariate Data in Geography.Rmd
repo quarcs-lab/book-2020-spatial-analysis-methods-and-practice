@@ -94,6 +94,7 @@ km.out$centers
 
 # adding a new column to the shapefile with the cluster identification
 sh$cluster<- km.out$cluster
+sh$cluster
 ```
 
 ## creating the choropleth map
@@ -145,7 +146,7 @@ a[sh_clusters[[2]]+1]<-2
 sh$skater<- a
 
 tm_shape(sh) +
-  tm_fill("skater",style="cat",palette="-Paired")  +
+  tm_fill("skater",style="cat",palette="Paired")  +
   tm_borders(lwd=2) +
   tm_layout(title = "skater clusters", title.position = c("right","bottom"))
 
