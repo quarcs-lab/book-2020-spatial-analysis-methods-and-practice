@@ -18,6 +18,7 @@ install.packages("jsonlite", type = "source")
 
 
 ```{r}
+install.packages("https://github.com/lixun910/rgeoda/releases/download/0.0.3/rgeoda_0.0.3.zip")
 #Load Required Packages
 library(tidyverse) 
 library(lubridate)
