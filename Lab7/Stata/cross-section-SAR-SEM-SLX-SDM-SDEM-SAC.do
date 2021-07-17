@@ -54,13 +54,34 @@ regress Income Insurance
 *grmap r, fcolor(Heat) clmethod(kmeans) clnumber(5) legenda(on) legorder(lohi) legstyle(2) legcount
 
 
-* Create contiguity matrix
-*spmatrix create contiguity WqueenS, normalize(row) replace
-*spmatrix summarize WqueenS
+* Create and export contiguity matrix
+spshape2dta CityGeoDa, replace
+use CityGeoDa, clear
+spset
+spmatrix create contiguity WqueenS, normalize(row) replace
+spmatrix create contiguity Wqueen,  normalize(none) replace
+spmatrix export Wqueen using Wqueen.txt, replace
+import delimited "Wqueen.txt", delimiter(space) rowrange(2) clear
+drop v1
+rename v# m#, renumber
+save "Wqueen.dta", replace
 
-* Create  inverse distance matrix
-*spmatrix create idistance WidistS, normalize(row) replace
-*spmatrix summarize WidistS
+spmatrix summarize WqueenS
+
+* Create and export inverse distance matrix
+spshape2dta CityGeoDa, replace
+use CityGeoDa, clear
+spset
+spmatrix create idistance WidistS, normalize(row) replace
+spmatrix create contiguity Widist,  normalize(none) replace
+spmatrix export Widist using Widist.txt, replace
+import delimited "Widist.txt", delimiter(space) rowrange(2) clear
+drop v1
+rename v# m#, renumber
+save "Widist.dta", replace
+
+
+spmatrix summarize WidistS
 
 * Import 8 nearest neighbours matrix
 use "W8nn_withID.dta", clear
@@ -69,7 +90,7 @@ spmatrix fromdata W8nnS = m*, normalize(row) replace
 spmatrix summarize W8nnS
 
 
-*spmatrix dir
+spmatrix dir
 
 * Run the Moran test based on the residuals of an OLS regression
 use CityGeoDa, clear
@@ -78,43 +99,61 @@ gen id = POLY_ID
 order id, first
 spset id, modify replace
 
+* (0) Fit OLS model:  No spatial lags
 regress Income Insurance
 estat moran, errorlag(W8nnS)
-*estat moran, errorlag(WqueenS)
-*estat moran, errorlag(WidistS)
+estat moran, errorlag(WqueenS)
+estat moran, errorlag(WidistS)
 
 * Run LM spatial diagnostics (needs spatreg package, which in turn needs a symmetric W matrix)
 * [IMPORTANT] Import .dta weight matrix with spatwmat package, standardize it, and store eigen values
 *spatwmat using "W8nn.dta", name(W8nnS_spatwmat) eigenval(eW8nnS_spatwmat) standardize
-*spatwmat using "Wqueen.dta", name(WqueenS_spatwmat) eigenval(WqueenS_spatwmat) standardize
-*use CityGeoDa, clear
-*reg Income Insurance
-*spatdiag, weights(WqueenS_spatwmat)
 
-* Fit SLM(SAR) model: spatial lag of the dependent variable [AIC = 1628.111]
+use CityGeoDa, clear
+spatwmat using "WqueenStata.dta", name(WqueenStata_spatwmat) eigenval(eWqueenStata_spatwmat) standardize
+*spatwmat using "Wqueen.dta", name(Wqueen_spatwmat) eigenval(Wqueen_spatwmat) standardize
+reg Income Insurance
+spatdiag, weights(WqueenStata_spatwmat)
+*spatdiag, weights(Wqueen_spatwmat)
+
+
+* (1) Fit SLM(SAR) model: spatial lag of the dependent variable [AIC = 1628.111]
 spregress Income Insurance, ml dvarlag(W8nnS) vce(robust)
   * Compute information criteria (only for maximum likelihood)
   estat ic
   * Compute spillover (indirect) effect
   estat impact
 
-* Fit SEM model: spatial lag of the error (no spillover)  [AIC = 1604.61]
+* (2) Fit SEM model: spatial lag of the error (no spillover)  [AIC = 1604.61]
 spregress Income Insurance, ml errorlag(W8nnS) vce(robust)
   * Compute information criteria (only for maximum likelihood)
   estat ic
   * Compute spillover (indirect) effect
   estat impact
 
-* Fit SLX model: spatial lag of the independent variables [AIC = 1644.761]
+* (3) Fit SLX model: spatial lag of the independent variables [AIC = 1644.761]
 spregress Income Insurance, ml ivarlag(W8nnS:Insurance) vce(robust)
   * Compute information criteria (only for maximum likelihood)
   estat ic
   * Compute spillover (indirect) effect
   estat impact
 
-* Fit SDM model: spatial lag of the dependent and independent variables [AIC = 1604.229]
+* (4) Fit SDM model: spatial lag of the dependent and independent variables [AIC = 1604.23]
 spregress Income Insurance, ml dvarlag(W8nnS) ivarlag(W8nnS:Insurance) vce(robust)
   * Compute information criteria (only for maximum likelihood)
   estat ic
   * Compute spillover (indirect) effect
   estat impact
+
+
+* Model Selection: SDM vs OLS vs SLX vs SAR vs SEM (Based on the Wald Test)
+spregress Income Insurance, ml dvarlag(W8nnS) ivarlag(W8nnS:Insurance) vce(robust)
+
+  * Can SDM become OLS? No
+test [W8nnS]Income = [W8nnS]Insurance = 0
+  * Can SDM become SLX? No
+test [W8nnS]Income = 0
+ * Can SDM become SAR? No
+test [W8nnS]Insurance = 0
+ * Can SDM become SEM? Yes
+testnl [W8nnS]Insurance = -[W8nnS]Income * [Income]Insurance
