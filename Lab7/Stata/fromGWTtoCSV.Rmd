@@ -1,0 +1,31 @@
+---
+title: "fromGALtoCSV"
+author: "Carlos Mendez"
+date: "5/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(spdep)
+```
+
+
+- Make sure you set your working directory to the current folder
+- Make sure the region id of GWT file is poly_id
+
+```{r}
+W8nnGeoda_fromGeoda_NB <- read.gwt2nb("W8nnGeoda.gwt")
+```
+
+Create binary Weights matrix. To create  row-standardized weights matrix use `style = W`
+
+```{r}
+W8nnGeoda_fromGeoda_MAT <- nb2mat(W8nnGeoda_fromGeoda_NB, style="B")
+```
+
+
+```{r}
+write.csv(W8nnGeoda_fromGeoda_MAT,"W8nn_fromGeoda_MAT.csv")
+```
+

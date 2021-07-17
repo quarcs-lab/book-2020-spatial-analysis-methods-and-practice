@@ -1,0 +1,31 @@
+---
+title: "fromGALtoCSV"
+author: "Carlos Mendez"
+date: "5/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(spdep)
+```
+
+
+Make sure you set your working directory to the current folder
+
+
+```{r}
+Wqueen_fromGeoda_NB <- read.gal("WqueenGeoda.gal")
+```
+
+Create binary Weights matrix. To create  row-standardized weights matrix use `style = W`
+
+```{r}
+Wqueen_fromGeoda_MAT <- nb2mat(Wqueen_fromGeoda_NB, style="B")
+```
+
+
+```{r}
+write.csv(Wqueen_fromGeoda_MAT,"Wqueen_fromGeoda_MAT.csv")
+```
+

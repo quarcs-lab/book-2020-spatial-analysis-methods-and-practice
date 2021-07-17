@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <title>CityGeoDa</title>
+    <layers>
+        <layer>
+            <datasource>
+                <type>ESRI Shapefile</type>
+                <path>CityGeoDa.shp</path>
+            </datasource>
+            <layername>CityGeoDa</layername>
+            <title/>
+            <variable_order>
+                <time_ids>
+                    <id>time 0</id>
+                </time_ids>
+                <var>POLY_ID</var>
+                <var>Municipali</var>
+                <var>PostCode</var>
+                <var>Population</var>
+                <var>
+                    Density
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    Foreigners
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    Owners
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    SecondaryE
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    University
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    Phd_Master
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    Income
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    Insurance
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    Rent
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    Expenses
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    Area
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>Regimes</var>
+            </variable_order>
+            <custom_classifications/>
+            <weights_entries>
+                <weights>
+                    <title>WqueenGeoda</title>
+                    <default/>
+                    <meta_info>
+                        <weights_type>custom</weights_type>
+                        <path>WqueenGeoda.gal</path>
+                        <id_variable>POLY_ID</id_variable>
+                        <symmetry>unknown</symmetry>
+                        <num_observations>90</num_observations>
+                        <min_neighbors>2</min_neighbors>
+                        <max_neighbors>12</max_neighbors>
+                        <mean_neighbors>5.622222222222222</mean_neighbors>
+                        <median_neighbors>5</median_neighbors>
+                        <non_zero_perc>6.246913580246914</non_zero_perc>
+                    </meta_info>
+                </weights>
+            </weights_entries>
+            <default_vars>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+            </default_vars>
+        </layer>
+    </layers>
+</project>
