@@ -146,7 +146,7 @@ spregress Income Insurance, ml dvarlag(W8nnS) ivarlag(W8nnS:Insurance) vce(robus
   estat impact
 
 
-* Model Selection: SDM vs OLS vs SLX vs SAR vs SEM (Based on the Wald Test)
+* Model Selection based on the Wald Test
 spregress Income Insurance, ml dvarlag(W8nnS) ivarlag(W8nnS:Insurance) vce(robust)
 
   * Can SDM become OLS? No
@@ -157,3 +157,22 @@ test [W8nnS]Income = 0
 test [W8nnS]Insurance = 0
  * Can SDM become SEM? Yes
 testnl [W8nnS]Insurance = -[W8nnS]Income * [Income]Insurance
+
+* Model selection based on the LR test
+
+  * Can SDM become SAR? (Is SAR nested within SDM?) NO
+quietly spregress Income Insurance, ml dvarlag(W8nnS)
+estimates store SAR
+quietly spregress Income Insurance, ml dvarlag(W8nnS) ivarlag(W8nnS:Insurance)
+estimates store SDM
+lrtest SAR SDM
+
+* Can SDM become SEM? (Is SEM nested within SDM?) YES (The Log Likelihoods are very close)
+quietly spregress Income Insurance, ml errorlag(W8nnS)
+scalar m1 = e(ll)
+quietly spregress Income Insurance, ml dvarlag(W8nnS) ivarlag(W8nnS:Insurance)
+scalar m2 = e(ll)
+
+di "chi2(2) = " 2*(m2-m1)
+di "Prob > chi2 = "chi2tail(2, 2*(m2-m1))
+*NOTE: 2 degrees of freedom because SEM only has 1 explanatory variable while SDM has 3 expnatory variables
